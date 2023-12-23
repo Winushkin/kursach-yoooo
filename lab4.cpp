@@ -1,5 +1,7 @@
 #include <iostream>
 #include <fstream>
+//#include "main.h"
+
 
 using namespace std;
 int const wordsLen = 10, startWords = 50;
@@ -12,7 +14,7 @@ char first_10_of_Latin[] = {'A', 'B', 'C', 'D', 'E',
 
 
 
-void clearStream(){
+void clearStream4(){
     cin.clear();
     cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
@@ -195,13 +197,13 @@ int main4() {
     for (int repeat = 0; repeat < 100; repeat++){
         cout << "Введите номер задания: ";
         cin >> problem;
-        clearStream();
+        clearStream4();
 
         switch (problem){
             case 1:
                 cout << "Выберите способ ввода последовательности(1. Ввод, 2. Файл): ";
                 cin >> method;
-                clearStream();
+                clearStream4();
 
                 if (method == 1){
                     cout << "Введите строку: ";

@@ -6,8 +6,9 @@ using namespace chrono;
 using time_mngr = time_point<steady_clock, duration<__int64_t, ratio<1, 1000000000>>>;
 
 
-void clearStream(){
-    cin.sync();
+void clearStream2(){
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 
@@ -170,7 +171,7 @@ int main2(){
 
         cout << "\nВведите номер задачи(0 для выхода): ";
         cin >> problem;
-        clearStream();
+        clearStream2();
         switch (problem) {
 
             case 1:
@@ -232,7 +233,7 @@ int main2(){
             case 5:
                 cout << "Введите число a: ";
                 cin >> a;
-                clearStream();
+                clearStream2();
                 low = 0;
                 high = n - 1;
                 l_border = findLeft(arr, a, low,  mid, high);
@@ -242,7 +243,7 @@ int main2(){
             case 6:
                 cout << "Введите число b: ";
                 cin >> b;
-                clearStream();
+                clearStream2();
                 low = 0;
                 high = n - 1;
                 r_border = findRight(arr, b, low,  mid, high);
@@ -252,7 +253,7 @@ int main2(){
             case 7:
                 cout << "Введите число a: ";
                 cin >> a;
-                clearStream();
+                clearStream2();
                 fillArray(arr, n);
                 quickSort(arr, 0, n - 1);
                 printArray(arr, n);
@@ -277,14 +278,14 @@ int main2(){
             case 8:
                 cout << "Вводите индексы элементов, которые хотите поменять местами (Вводить попарно и через пробел, чтобы закончить введите: -1 -1):\n";
                 cin >> index1 >> index2;
-                clearStream();
+                clearStream2();
                 while (index1 != -1 && index2 != -1){
                     start = steady_clock::now();
                     swap(arr[index1], arr[index2]);
                     end = steady_clock::now();
                     cout << "Свап прошел за " << (end - start).count() << " наносек\n";
                     cin >> index1 >> index2;
-                    clearStream();
+                    clearStream2();
                 }
                 printArray(arr, n);
                 break;
@@ -292,7 +293,7 @@ int main2(){
             case 9:
                 cout << "Введите число: ";
                 cin >> idz_num;
-                clearStream();
+                clearStream2();
                 idz9(arr, n, idz_num);
                 break;
 

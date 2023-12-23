@@ -1,5 +1,4 @@
 #include <iostream>
-#include <limits>
 #include <iomanip>
 
 using namespace std;
@@ -14,6 +13,12 @@ void lineDown(int times=1){
 }
 
 
+void clearStream3(){
+    cin.clear();
+    cin.ignore(numeric_limits<streamsize>::max(), '\n');
+}
+
+
 void printMatrix(int mtx[][ORDER]){
     int size = (ORDER * ORDER) - 1;
 
@@ -24,12 +29,6 @@ void printMatrix(int mtx[][ORDER]){
         }
     }
     lineDown();
-}
-
-
-void clearStream(){
-    cin.clear();
-    cin.ignore(numeric_limits<streamsize>::max(), '\n');
 }
 
 
@@ -195,13 +194,13 @@ int main3(){
     for(int repeat = 0; repeat < 100; ++repeat) {
         cout << "Введите номер задания: ";
         cin >> problem;
-        clearStream();
+        clearStream3();
 
         switch (problem) {
             case 1:
                 cout << "Введите способ заполнения матрицы(1 или 2): ";
                 cin >> method;
-                clearStream();
+                clearStream3();
                 fillMatrix(mtx, method);
                 printMatrix(mtx);
                 break;
@@ -209,7 +208,7 @@ int main3(){
             case 2:
                 cout << "Введите способ перестановки блоков: ";
                 cin >> method;
-                clearStream();
+                clearStream3();
                 moveMatrixBlocks(mtx, method);
                 printMatrix(mtx);
                 break;
